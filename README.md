@@ -42,7 +42,3 @@ services:
 ~~~
 
 A vantagem de utilizar o docker compose é que além de facilitar o gerenciamento, facilita também a realização de backups dos arquivos que são persistentes utilizando os [volumes do Docker](https://docs.docker.com/storage/volumes/).
-<<<<<<< HEAD
-
-=======
->>>>>>> 3881368989d4a5bb82ff8fc2455fdd3aad7f2d19
