@@ -1,0 +1,18 @@
+version: '3.0'
+
+volumes:
+  config:
+  data:
+
+services:
+  webserver:
+    image: suporteticopimaq/webserver:1.3
+    ports:
+      - 80:80
+      - 22:22
+    environment:
+      - ROOT_PASSWORD=secret
+    restart: always
+    volumes:
+      - config:/etc/apache2/
+      - data:/var/www/html/
