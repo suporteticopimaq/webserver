@@ -49,3 +49,4 @@ Na opção `ports` é possivel alterar a porta que o container respondera os ser
 A variavel `ROOT_PASSWORD` é onde definimos a senha de root do container, então altere para uma senha forte. Lembre-se que o acesso ao container serve apenas para a personalização dos arquivos da pagina Web, não é recomendado realizar a instalação de nenhum pacote adicional, caso precise utilize o `Dockerfile` e crie uma imagem nova com todas as alterações necessarias.
 
 A vantagem de utilizar o docker compose é que além de facilitar o gerenciamento, facilita também a realização de backups dos arquivos que são persistentes utilizando os [volumes do Docker](https://docs.docker.com/storage/volumes/).
+
