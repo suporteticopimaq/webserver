@@ -2,7 +2,6 @@ FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y \
   apache2 \
   openssh-server \
-  git \
   nano \
   && rm -rf /var/lib/apt/lists/*
 COPY ./app /app
