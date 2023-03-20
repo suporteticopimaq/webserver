@@ -17,7 +17,7 @@ Caso não saiba realizar a personalização da imagem utilize a [Documentação 
 ## Rodando o container
 Para rodar o container de forma simples, utilize o seguinte comando
 ~~~bash
-docker run -d -p 80:80 -p 22:22 -e ROOT_PASSWORD=secret suporteticopimaq/webserver:1.3
+docker run -d -p 80:80 -p 22:22 -e ROOT_PASSWORD=secret suporteticopimaq/webserver
 ~~~
 No comando acima a tag `-e ROOT_PASSWORD` define a senha que será utilizada para acessar o container via ssh, o usuario padrão de acesso é o `root`.
  
@@ -33,7 +33,7 @@ volumes:
 
 services:
   webserver:
-    image: suporteticopimaq/webserver:1.3
+    image: suporteticopimaq/webserver
     ports:
       - 80:80
       - 22:22
