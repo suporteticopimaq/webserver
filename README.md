@@ -21,9 +21,9 @@ docker run -d -p 80:80 -p 22:22 -e ROOT_PASSWORD=secret suporteticopimaq/webserv
 ~~~
 No comando acima a tag `-e ROOT_PASSWORD` define a senha que será utilizada para acessar o container via ssh, o usuario padrão de acesso é o `root`.
  
-Como uma segunda opção, foi disponibilizado um arquivo `docker-compose.yml` que além de automatizar a criação do container, vai também disponibilizar a criação automatica de volumes para os diretorios de configuração do Apache `/etc/apache2/` e para o diretorio web `/var/www/html/`.
+Como uma segunda opção, foi disponibilizado dois arquivos `docker-compose.yml` que além de automatizar a criação do container, vai também disponibilizar a criação automatica de volumes para os diretorios de configuração do Apache `/etc/apache2/` e para o diretorio web `/var/www/html/`.
 
-`docker-compose.yml`
+Arquivo `docker-compose.yml` somente com o servidor Web.
 ~~~yml
 version: '3.0'
 
@@ -43,6 +43,41 @@ services:
     volumes:
       - config:/etc/apache2/
       - data:/var/www/html/
+~~~
+
+Arquivo `docker-compose.yml` somente com servidor Web e um servidor MySQL.
+~~~yml
+version: '3.0'
+
+volumes:
+  config:
+  data:
+
+services:
+  webserver:
+    image: suporteticopimaq/webserver
+    ports:
+      - 80:80
+      - 22:22
+    environment:
+      - ROOT_PASSWORD=secret
+    restart: always
+    volumes:
+      - config:/etc/apache2/
+      - data:/var/www/html/
+
+  mysql:
+    image: mysql:8
+    ports:
+      - 3306:3306
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: database
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysql:/var/lib/mysql
 ~~~
 _O arquivo `docker-compose.yml` é personalizavel para se adequar a todas as necessidades._
 
