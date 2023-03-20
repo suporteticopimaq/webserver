@@ -6,7 +6,7 @@ echo "root:$ROOT_PASSWORD" | chpasswd
 # Altera o diretorio primario que aparecerá quando realizar o login
 echo "cd /var/www/html/" >> /root/.bashrc
 
-# Inicia os serviços Web e SSH
+# Inicia os serviços do Apache e o SSH
 service ssh start
 service apache2 start
 
