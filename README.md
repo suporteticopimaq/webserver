@@ -9,6 +9,8 @@ Esta documentação foi desenvolvida com o objetivo de simplificar e facilitar a
 
 Utilizamos a imagem oficial do [Ubuntu 22.04 LTS](https://hub.docker.com/layers/library/ubuntu/22.04/images/sha256-c985bc3f77946b8e92c9a3648c6f31751a7dd972e06604785e47303f4ad47c4c?context=explore) juntamente com o servidor web Apache e um servidor SSH para acessar remotamente o ambiente gerenciar os conteudos do servidor.
 
+Foi instalado previamente o [Python](https://www.python.org/) e o [Java](https://www.java.com/), para facilitar no desenvolvimento de aplicações para o servidor Web.
+
 Já existe uma imagem pré-criada no Docker Hub, porém disponibilizei todos os arquivos para caso você saiba e prefira personalizar a imagem.
 Caso não saiba realizar a personalização da imagem utilize a [Documentação Oficial](https://docs.docker.com/build/).
 
