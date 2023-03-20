@@ -6,7 +6,7 @@ volumes:
 
 services:
   webserver:
-    image: suporteticopimaq/webserver:1.3
+    image: suporteticopimaq/webserver
     ports:
       - 80:80
       - 22:22
